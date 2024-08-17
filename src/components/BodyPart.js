@@ -1,12 +1,12 @@
 import React from 'react';
-import { Stack, Typography } from '@mui/material';
+import { Stack, Typography, Box } from '@mui/material';
 import Icon from '../assets/icons/gym.png';
 
 const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   const isSelected = bodyPart === item;
 
   return (
-    <Stack
+    <Box
       type="button"
       alignItems="center"
       justifyContent="center"
@@ -18,7 +18,12 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
         width: '270px',
         height: '282px',
         cursor: 'pointer',
-        gap: '47px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '20px',
+        alignItems: 'center',
+        justifyContent: 'center',
+        margin: '10px', // Optional: Adds some spacing between the cards
       }}
       onClick={() => {
         setBodyPart(item);
@@ -29,7 +34,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
       <Typography fontSize="24px" fontWeight="bold" fontFamily="Alegreya" color="#3A1212" textTransform="capitalize">
         {item}
       </Typography>
-    </Stack>
+    </Box>
   );
 };
 
