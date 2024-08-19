@@ -7,6 +7,7 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
 
   return (
     <Stack
+
       type="button"
       alignItems="center"
       justifyContent="center"
