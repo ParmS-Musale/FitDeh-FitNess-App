@@ -6,7 +6,12 @@ const BodyPart = ({ item, setBodyPart, bodyPart }) => {
   const isSelected = bodyPart === item;
 
   return (
+<<<<<<< HEAD
     <Box
+=======
+    <Stack
+
+>>>>>>> 7916844fc22444acc02c111c587d7518812d2239
       type="button"
       alignItems="center"
       justifyContent="center"

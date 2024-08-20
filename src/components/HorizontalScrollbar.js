@@ -29,6 +29,7 @@ const RightArrow = () => {
 
 const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
   <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
+<<<<<<< HEAD
         <Box sx={{ display: 'flex' }}>
 
     {data.map((item) => (
@@ -45,6 +46,27 @@ const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
         )}
       </Box>
     ))}
+=======
+    <Box sx={{ display: "flex" }}>
+      {data.map((item) => (
+        <Box
+          key={item.id || item}
+          itemId={item.id || item}
+          title={item.id || item}
+          m="0 40px"
+        >
+          {bodyParts ? (
+            <BodyPart
+              item={item}
+              setBodyPart={setBodyPart}
+              bodyPart={bodyPart}
+            />
+          ) : (
+            <ExerciseCard exercise={item} />
+          )}
+        </Box>
+      ))}
+>>>>>>> 7916844fc22444acc02c111c587d7518812d2239
     </Box>
   </ScrollMenu>
 );
