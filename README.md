@@ -1,4 +1,4 @@
-# FitDeh Fitness App
+# FitDeh FitNess App
 
 FitDeh is a fitness application that helps users find exercises, target specific body parts, and track their fitness routines. The application is built with React and uses Material UI for styling. This README will guide you through setting up the project, understanding its structure, and running it locally.
 
