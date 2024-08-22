@@ -1,19 +1,18 @@
-import React, { useContext } from "react";
-import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
-import { Box, Typography } from "@mui/material";
+import React, { useContext } from 'react';
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import { Box } from '@mui/material';
 
-import ExerciseCard from "./ExerciseCard";
-import BodyPart from "./BodyPart";
-import RightArrowIcon from "../assets/icons/right-arrow.png";
-import LeftArrowIcon from "../assets/icons/left-arrow.png";
+import BodyPart from './BodyPart';
+import RightArrowIcon from '../assets/icons/right-arrow.png';
+import LeftArrowIcon from '../assets/icons/left-arrow.png';
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
 
   return (
-    <Typography onClick={() => scrollPrev()} className="right-arrow">
+    <div onClick={() => scrollPrev()} className="right-arrow">
       <img src={LeftArrowIcon} alt="right-arrow" />
-    </Typography>
+    </div>
   );
 };
 
@@ -21,52 +20,23 @@ const RightArrow = () => {
   const { scrollNext } = useContext(VisibilityContext);
 
   return (
-    <Typography onClick={() => scrollNext()} className="left-arrow">
+    <div onClick={() => scrollNext()} className="left-arrow">
       <img src={RightArrowIcon} alt="right-arrow" />
-    </Typography>
+    </div>
   );
 };
 
-const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
+const HorizontalScrollbar = ({ data, setBodyPart, bodyPart }) => (
   <ScrollMenu LeftArrow={LeftArrow} RightArrow={RightArrow}>
-<<<<<<< HEAD
-        <Box sx={{ display: 'flex' }}>
-
-    {data.map((item) => (
-      <Box
-        key={item.id || item}
-        itemId={item.id || item}
-        title={item.id || item}
-        m="0 40px"
-      >
-        {bodyParts ? (
-          <BodyPart item={item} setBodyPart={setBodyPart} bodyPart={bodyPart} />
-        ) : (
-          <ExerciseCard exercise={item} />
-        )}
-      </Box>
-    ))}
-=======
-    <Box sx={{ display: "flex" }}>
+    <Box sx={{ display: 'flex' }}>
       {data.map((item) => (
-        <Box
+        <BodyPart
           key={item.id || item}
-          itemId={item.id || item}
-          title={item.id || item}
-          m="0 40px"
-        >
-          {bodyParts ? (
-            <BodyPart
-              item={item}
-              setBodyPart={setBodyPart}
-              bodyPart={bodyPart}
-            />
-          ) : (
-            <ExerciseCard exercise={item} />
-          )}
-        </Box>
+          item={item}
+          setBodyPart={setBodyPart}
+          bodyPart={bodyPart}
+        />
       ))}
->>>>>>> 7916844fc22444acc02c111c587d7518812d2239
     </Box>
   </ScrollMenu>
 );
